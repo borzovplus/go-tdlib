@@ -19,7 +19,7 @@ import (
     "log"
     "path/filepath"
 
-    "github.com/zelenin/go-tdlib/client"
+    "github.com/borzovplus/go-tdlib/client"
 )
 
 func main() {
@@ -120,7 +120,7 @@ tdlibClient, err := client.NewClient(authorizer, proxy)
 ## Notes
 
 * WIP. Library API can be changed in the future
-* The package includes a .tl-parser and generated [json-schema](https://github.com/zelenin/go-tdlib/tree/master/data) for creating libraries in other languages
+* The package includes a .tl-parser and generated [json-schema](https://github.com/borzovplus/go-tdlib/tree/master/data) for creating libraries in other languages
 
 ## Author
 
