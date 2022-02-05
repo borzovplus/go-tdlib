@@ -1783,6 +1783,22 @@ type TdlibParameters struct {
 	EnableStorageOptimizer bool `json:"enable_storage_optimizer"`
 	// If set to true, original file names will be ignored. Otherwise, downloaded files will be saved under names as close as possible to the original name
 	IgnoreFileNames bool `json:"ignore_file_names"`
+	// This setting removes minithumbnails everywhere. It reduces memory usage because tdlib keeps them in RAM
+	DisableMinithumbnails bool `json:"disable_minithumbnails"`
+	// If you don't care about having the original filenames of every file stored in RAM, you can disable them using this option. It reduces memory usage
+	DisableDocumentFilenames bool `json:"disable_document_filenames"`
+	// In TDLib pending notification updates are stored in ram until you "read" them. This option disables completely notifications and keeps the pending notifications queue empty, reducing memory usage
+	DisableNotifications bool `json:"disable_notifications"`
+	// If you don't care about have updateChatLastMessage updates enable this
+	IgnoreUpdateChatLastMessage bool `json:"ignore_update_chat_last_message"`
+	// If you don't care about have updateChatReadInbox updates enable this
+	IgnoreUpdateChatReadInbox bool `json:"ignore_update_chat_read_inbox"`
+	// If you don't care about have updateUserChatAction updates enable this
+	IgnoreUpdateUserChatAction bool `json:"ignore_update_user_chat_action"`
+	// If you don't care about receiving read receipts and remote deletes from other users, enable this, it will reduce memory usage
+	IgnoreServerDeletesAndReads bool `json:"ignore_server_deletes_and_reads"`
+	// Receive chats and users access hash as updates
+	ReceiveAccessHashes bool `json:"receive_access_hashes"`
 }
 
 func (entity *TdlibParameters) MarshalJSON() ([]byte, error) {
